@@ -4,7 +4,8 @@ import {
   Text,
   View,
   TouchableOpacity,
-  WebView
+  WebView,
+  Platform
 } from 'react-native';
 
 export default class NewShow extends Component {
@@ -46,11 +47,17 @@ export default class NewShow extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    flexDirection: 'column',
   },
   top: {
-    paddingTop: 10,
+    flex: 1,
+    flexDirection: 'row',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: Platform.OS === 'ios' ? 20 : 0,   // 处理iOS状态栏
+    height: Platform.OS === 'ios' ? 68 : 48,   // 处理iOS状态栏
+    backgroundColor: '#d74047',
+    alignItems: 'center'
   },
   back: {
     lineHeight: 20,

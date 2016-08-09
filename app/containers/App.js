@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import Welcome from '../pages/Welcome'
+import Footer from '../components/Footer'
 
 class App extends Component {
   constructor (props) {
@@ -17,7 +18,9 @@ class App extends Component {
   renderScene (route, navigator) {
     let Component = route.component;
     return (
-      <Component navigator={navigator} route={route} />
+      
+        <Component navigator={navigator} route={route} />
+        
     );
   }
 
