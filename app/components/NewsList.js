@@ -6,7 +6,9 @@ import {
   TouchableOpacity,
   Image,
   ListView,
-  RefreshControl
+  RefreshControl,
+  Platform,
+  Dimensions
 } from 'react-native';
 
 import NewShow from '../pages/NewShow'
@@ -39,13 +41,15 @@ export default class NewsList extends Component {
 
   renderImage(imglist){
     // console.info(imglist);
+    const width = (Dimensions.get('window').width - 50)/3;
+    const height = width/194*108;
 
     if(imglist.length > 0){
       return (
         <View style={styles.imglist}>
           {
             imglist.map(function(imgObj){
-              return <View key={Math.random()} style={styles.flex1,styles.img}><Image style={styles.img} source={{uri: imgObj.url}} /></View>
+              return <View key={Math.random()} style={styles.flex1, styles.threeImg}><Image style={styles.threeImg} source={{uri: imgObj.url}} /></View>
             })
           }
         </View>
@@ -117,31 +121,19 @@ export default class NewsList extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
   imglist: {
     alignItems: 'flex-start',
     justifyContent: 'space-between',
     flexDirection: 'row',
     flex: 1
   },
+  threeImg: {
+    width: (Dimensions.get('window').width - 50)/3,
+    height: (Dimensions.get('window').width - 50)/3/194*108,
+  },
   img : {
-      width : 90,
-      height : 56,
+    width : 90,
+    height : 56,
   },
   text: {
     marginBottom: 5,

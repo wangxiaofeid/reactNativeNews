@@ -25,13 +25,16 @@ export default class NewShow extends Component {
   render() {
     // console.info(this.props.route);
     const { width, height } = Dimensions.get('window');
-    var height2 = height - (Platform.OS?48:28);
+    var height2 = height - (Platform.OS?48:28) - 50;
     return (
       <View style={styles.container}>
         <View style={styles.top}>
           <TouchableOpacity onPress={this.back}>
             <Text style={styles.back}>返回</Text>
           </TouchableOpacity>
+          <View style={styles.title}>
+            <Text style={{lineHeight: 30}}>新闻详情</Text>
+          </View>
         </View>
         <WebView
           ref='webview'
@@ -56,12 +59,16 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingLeft: 10,
     paddingRight: 10,
-    paddingTop: Platform.OS === 'ios' ? 20 : 0,   // 处理iOS状态栏
-    height: Platform.OS === 'ios' ? 48 : 28,   // 处理iOS状态栏
+    paddingTop: Platform.OS === 'ios' ? 18 : 0,   // 处理iOS状态栏
+    height: Platform.OS === 'ios' ? 63 : 28,   // 处理iOS状态栏
     backgroundColor: '#d74047',
   },
   back: {
-    lineHeight: 20,
+    lineHeight: 30,
     width: 30
+  },
+  title: {
+    flex: 1,
+    alignItems: 'center',
   }
 });
