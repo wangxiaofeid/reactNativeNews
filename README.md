@@ -11,7 +11,7 @@ react-native项目
 * [能用到的样式](http://www.cnblogs.com/suxun/p/5222175.html)
 * [真机测试](http://www.open-open.com/lib/view/open1456707122859.html)
 * 0.31版本真机测试`localhost`改`ip`设置，跨域接口设置
-```html
+```json
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
