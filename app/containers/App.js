@@ -3,7 +3,8 @@ import {
   StyleSheet,
   View,
   StatusBar,
-  Navigator
+  Navigator,
+  Dimensions
 } from 'react-native';
 
 import Welcome from '../pages/Welcome'
@@ -17,10 +18,15 @@ class App extends Component {
 
   renderScene (route, navigator) {
     let Component = route.component;
+    const { width, height } = Dimensions.get('window');
     return (
-      
-        <Component navigator={navigator} route={route} />
-        
+      <View>
+        <View style={{ width: width, height: height}}>
+          <Component navigator={navigator} route={route} />
+          <View style={{ height: 50}}></View>
+        </View>
+        <Footer></Footer>
+      </View>
     );
   }
 

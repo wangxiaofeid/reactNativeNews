@@ -5,7 +5,8 @@ import {
   View,
   TouchableOpacity,
   WebView,
-  Platform
+  Platform,
+  Dimensions
 } from 'react-native';
 
 export default class NewShow extends Component {
@@ -23,6 +24,8 @@ export default class NewShow extends Component {
 
   render() {
     // console.info(this.props.route);
+    const { width, height } = Dimensions.get('window');
+    var height2 = height - (Platform.OS?48:28);
     return (
       <View style={styles.container}>
         <View style={styles.top}>
@@ -33,7 +36,7 @@ export default class NewShow extends Component {
         <WebView
           ref='webview'
           automaticallyAdjustContentInsets={false}
-          style={{width: 320}}
+          style={{width: width, height: height2 }}
           source={{uri: this.props.route.url}}
           startInLoadingState={true}
           scalesPageToFit={true}
@@ -46,20 +49,19 @@ export default class NewShow extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
+    
   },
   top: {
-    flex: 1,
     flexDirection: 'row',
+    justifyContent: 'flex-start',
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: Platform.OS === 'ios' ? 20 : 0,   // 处理iOS状态栏
-    height: Platform.OS === 'ios' ? 68 : 48,   // 处理iOS状态栏
+    height: Platform.OS === 'ios' ? 48 : 28,   // 处理iOS状态栏
     backgroundColor: '#d74047',
-    alignItems: 'center'
   },
   back: {
     lineHeight: 20,
+    width: 30
   }
 });

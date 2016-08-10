@@ -45,7 +45,7 @@ export default class NewsList extends Component {
         <View style={styles.imglist}>
           {
             imglist.map(function(imgObj){
-              return <View key={Math.random()} style={styles.flex1}><Image style={styles.img} source={{uri: imgObj.url}} /></View>
+              return <View key={Math.random()} style={styles.flex1,styles.img}><Image style={styles.img} source={{uri: imgObj.url}} /></View>
             })
           }
         </View>
@@ -58,7 +58,7 @@ export default class NewsList extends Component {
       return (
         <View style={styles.list}>
           <TouchableOpacity onPress={this.onPressButton.bind(this,newObj.share_url)}>
-            <View>
+            <View style={styles.text}>
               <Text>{newObj.title}</Text>
             </View>
             <View>
@@ -72,7 +72,7 @@ export default class NewsList extends Component {
         <View style={styles.list}>
           <TouchableOpacity onPress={this.onPressButton.bind(this,newObj.share_url)}>
             <View style={styles.imglist}>
-              <Image style={styles.img} source={{uri: newObj.image_url}} />
+              <Image style={styles.img, styles.mr5} source={{uri: newObj.image_url}} />
               <Text style={styles.flex1}>{newObj.title}</Text>
             </View>
           </TouchableOpacity>
@@ -135,13 +135,19 @@ const styles = StyleSheet.create({
   },
   imglist: {
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     flexDirection: 'row',
     flex: 1
   },
   img : {
-      width : 81,
-      height : 53,
+      width : 90,
+      height : 56,
+  },
+  text: {
+    marginBottom: 5,
+  },
+  mr5: {
+     marginRight: 5
   },
   flex1: {
     flex : 1

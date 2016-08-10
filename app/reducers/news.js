@@ -18,6 +18,7 @@ export default function news (state = defaultState, action) {
   			isRefresh: action.isRefresh
   		});
   	case types.ADD_NEWS_LIST:
+      action.newsList.pop();
   		return Object.assign({},state,{
   			newsList: state.isLoadMore ? state.newsList.concat(action.newsList) : action.newsList,
   			hasMore: action.hasMore,
