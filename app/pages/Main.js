@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import NewsList from '../components/NewsList'
+import Footer from '../components/Footer'
 import { fetchNews } from '../actions/index'
 
 class Main extends Component {
@@ -69,6 +70,7 @@ class Main extends Component {
   render() {
     const { news } = this.props;
       return (
+        <View>
             <NewsList 
               navigator={this.props.navigator} 
               newsList={news.newsList}
@@ -77,6 +79,8 @@ class Main extends Component {
               onEndReached={this.onEndReached}
               onScroll={this.onScroll}
               />
+            <Footer></Footer>
+          </View>
         )
 
   }

@@ -11,7 +11,7 @@ react-native项目
 * [能用到的样式](http://www.cnblogs.com/suxun/p/5222175.html)
 * [真机测试](http://www.open-open.com/lib/view/open1456707122859.html)
 * 0.31版本真机测试`localhost`改`ip`设置，跨域接口设置
-```json
+```
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -26,3 +26,17 @@ react-native项目
 		</dict>
 	</dict>
 ```
+
+##内部结构
+redux --> Navigator(主层级) -->  weblcome --> 
+```flow
+st=>start: Start
+e=>end: End
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes or No?
+io=>inputoutput: catch something...
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+``` 

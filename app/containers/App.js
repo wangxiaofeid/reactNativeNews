@@ -16,17 +16,21 @@ class App extends Component {
     this.renderScene = this.renderScene.bind(this);
   }
 
-  renderScene (route, navigator) {
-    let Component = route.component;
-    const { width, height } = Dimensions.get('window');
-    return (
-      <View>
+/*
+<View>
         <View style={{ width: width, height: height}}>
           <Component navigator={navigator} route={route} />
           <View style={{ height: 50}}></View>
         </View>
-        <Footer></Footer>
+        
       </View>
+*/ 
+
+  renderScene (route, navigator) {
+    let Component = route.component;
+    const { width, height } = Dimensions.get('window');
+    return (
+      
     );
   }
 

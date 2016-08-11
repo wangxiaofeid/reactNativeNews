@@ -20,6 +20,7 @@ export default class NewsList extends Component {
       selectedTab: 'news',
     }
     this._renderContent = this._renderContent.bind(this);
+    this.tabOnPress = this.tabOnPress.bind(this);
 
   }
 
@@ -32,6 +33,13 @@ export default class NewsList extends Component {
     );
   }
 
+  tabOnPress(str){
+    console.log(str);
+    this.setState({
+      selectedTab: str,
+    });
+  }
+
   render() {
       return (
         <TabBarIOS
@@ -42,24 +50,20 @@ export default class NewsList extends Component {
             title="新闻"
             icon={require('../img/more.png')}
             selectedIcon={require('../img/more.png')}
-            selected={this.state.selectedTab === 'news'}
+            selected={this.state.selectedTab === 'Main'}
             onPress={() => {
-              this.setState({
-                selectedTab: 'news',
-              });
+              this.tabOnPress('Main');
             }}>
-            {this._renderContent('#414A8C', '新闻')}
+            {this._renderContent('#414A8C', 'Main')}
           </TabBarIOS.Item>
           <TabBarIOS.Item
             systemIcon="history"
             badge={2}
             selected={this.state.selectedTab === 'redTab'}
             onPress={() => {
-              this.setState({
-                selectedTab: 'redTab'
-              });
+              this.tabOnPress('redTab');
             }}>
-            {this._renderContent('#783E33', 'Red Tab')}
+            {this._renderContent('#783E33', 'Main')}
           </TabBarIOS.Item>
           <TabBarIOS.Item
             icon={require('../img/install.png')}
@@ -68,11 +72,9 @@ export default class NewsList extends Component {
             title="设置"
             selected={this.state.selectedTab === 'setting'}
             onPress={() => {
-              this.setState({
-                selectedTab: 'setting'
-              });
+              this.tabOnPress('setting');
             }}>
-            {this._renderContent('#21551C', '设置')}
+            {this._renderContent('#21551C', 'Main')}
           </TabBarIOS.Item>
         </TabBarIOS>
       );

@@ -10,8 +10,8 @@ export function fetchNews (isRefresh, isLoadMore, page) {
   }
   return dispatch => {
     dispatch(fetchNewsList(isRefresh, isLoadMore));
-    return request('http://toutiao.com/api/article/recent/?source=2&count=20&category=__all__&max_behot_time=1470385897&utm_source=toutiao&offset=0&as=A135771AF424F4D&cp=57A4147F14ED6E1&max_create_time=1470301239&_=' + (1470385898200 + page))
-      .then((response) => {
+    // http://e.dangdang.com/mobile/api2.do?f=zdtj_u&action=bookList&columnCode=ad40_recommend&start=0&ebookReturnFields=editorRecommend,imgUrl&textFieldType=line&token=&returnType=json&deviceType=html5&pageNum=1&pageSize=4&permanentId=20160412170244923150127737880182547&channelId=70000&deviceSerialNo=html5
+    return request('http://toutiao.com/api/article/recent/?source=2&count=20&category=__all__&max_behot_time=1470895713.4&utm_source=toutiao&offset=0&as=A1C5F75A8C51679&cp=57AC413687295E1&_=' + (1470895713610 + page)).then((response) => {
         console.info(response);
         dispatch(addNewsList(response.data, response.has_more));
       })

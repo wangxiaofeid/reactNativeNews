@@ -74,7 +74,7 @@ import React,{ Component } from 'react';
 import {connect} from 'react-redux';
 import Main from '../pages/Main';
 
-class MainContainer extends Component {
+class NewsContainer extends Component {
 
   render () {
     return (
@@ -90,4 +90,4 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps)(MainContainer);
+export default connect(mapStateToProps)(NewsContainer);
