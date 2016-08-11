@@ -63,7 +63,7 @@ export default class NewsList extends Component {
             onPress={() => {
               this.tabOnPress('redTab');
             }}>
-            {this._renderContent('#783E33', 'Main')}
+            {this._renderContent('#783E33', 'Red Tab')}
           </TabBarIOS.Item>
           <TabBarIOS.Item
             icon={require('../img/install.png')}
@@ -74,7 +74,7 @@ export default class NewsList extends Component {
             onPress={() => {
               this.tabOnPress('setting');
             }}>
-            {this._renderContent('#21551C', 'Main')}
+            {this._renderContent('#21551C', '设置')}
           </TabBarIOS.Item>
         </TabBarIOS>
       );
