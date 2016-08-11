@@ -7,6 +7,7 @@ import {
   ScrollView,
   RefreshControl
 } from 'react-native';
+import { connect } from 'react-redux'
 
 import NewsList from '../components/NewsList'
 import { fetchNews } from '../actions/index'
@@ -102,4 +103,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main
+function mapStateToProps (state) {
+  const {news} = state;
+  return {
+    news
+  }
+}
+
+export default connect(mapStateToProps)(Main);

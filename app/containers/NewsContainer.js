@@ -72,13 +72,13 @@
 'use strict';
 import React,{ Component } from 'react';
 import {connect} from 'react-redux';
-import Main from '../pages/Main';
+import News from '../pages/News';
 
 class NewsContainer extends Component {
 
   render () {
     return (
-      <Main {...this.props} />
+      <News {...this.props} />
     );
   }
 }

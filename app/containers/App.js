@@ -21,11 +21,10 @@ class App extends Component {
     const { width, height } = Dimensions.get('window');
     return (
       <View>
-        <View style={{ width: width, height: height}}>
+        <View style={{ width: width, height: height-50}}>
           <Component navigator={navigator} route={route} />
-          <View style={{ height: 50}}></View>
         </View>
-        <Footer></Footer>
+        <Footer navigator={navigator} page={route.name}></Footer>
       </View>
     );
   }

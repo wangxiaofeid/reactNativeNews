@@ -6,7 +6,7 @@ import {
   InteractionManager
 } from 'react-native';
 
-import NewsContainer from '../containers/NewsContainer'
+import News from '../pages/News'
 
 class Welcome extends Component {
 
@@ -15,8 +15,8 @@ class Welcome extends Component {
     setTimeout(() => {
       InteractionManager.runAfterInteractions(() => {
         navigator.resetTo({
-          component: NewsContainer,
-          name: 'Main'
+          component: News,
+          name: 'News'
         });
       });
     }, 500);
