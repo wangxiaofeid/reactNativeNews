@@ -9,7 +9,7 @@ import {
   Dimensions
 } from 'react-native';
 
-export default class NewShow extends Component {
+export default class h5 extends Component {
   constructor (props) {
     super(props);
     this.back = this.back.bind(this);
@@ -33,7 +33,7 @@ export default class NewShow extends Component {
             <Text style={styles.back}>返回</Text>
           </TouchableOpacity>
           <View style={styles.title}>
-            <Text style={{lineHeight: 30}}>新闻详情</Text>
+            <Text style={{lineHeight: 30}}>{this.props.title}</Text>
           </View>
         </View>
         <WebView

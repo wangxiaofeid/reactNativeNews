@@ -21,7 +21,7 @@ class App extends Component {
     const { width, height } = Dimensions.get('window');
     return (
       <View>
-        <View style={{ width: width, height: height-50}}>
+        <View style={{ width: width, height: height-50, backgroundColor: '#fff'}}>
           <Component navigator={navigator} route={route} />
         </View>
         <Footer navigator={navigator} page={route.name}></Footer>

@@ -11,7 +11,8 @@ import {
   Dimensions
 } from 'react-native';
 
-import NewShow from '../pages/NewShow'
+import WebView from '../pages/WebView'
+import Loading from '../components/Loading'
 
 export default class NewsList extends Component {
 
@@ -32,9 +33,10 @@ export default class NewsList extends Component {
     const { navigator } = this.props;
     if(navigator){
       navigator.push({
-        component: NewShow,
-        name: 'NewShow',
-        url
+        component: WebView,
+        name: 'WebView',
+        url,
+        title: '新闻详情'
       });
     }
   }
@@ -115,7 +117,7 @@ export default class NewsList extends Component {
         />
       );
     }else{
-      return (<Text>暂无数据</Text>)
+      return (<Loading></Loading>)
     }
   }
 }

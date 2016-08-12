@@ -11,7 +11,8 @@ import {
   Dimensions
 } from 'react-native';
 
-import NewShow from '../pages/NewShow'
+import WebView from '../pages/WebView'
+import Loading from '../components/Loading'
 
 export default class BooksList extends Component {
 
@@ -32,9 +33,10 @@ export default class BooksList extends Component {
     const { navigator } = this.props;
     if(navigator){
       navigator.push({
-        component: NewShow,
-        name: 'NewShow',
-        url: `http://e.dangdang.com/touch/fenxiang/product/product.html?id=${saleId}&mediaId=${mediaId}&mediaType=${mediaType}`
+        component: WebView,
+        name: 'WebView',
+        url: `http://e.dangdang.com/touch/fenxiang/product/product.html?id=${saleId}&mediaId=${mediaId}&mediaType=${mediaType}`,
+        title: '书详情'
       });
     }
   }
@@ -77,7 +79,7 @@ export default class BooksList extends Component {
         />
       );
     }else{
-      return (<Text>暂无数据</Text>)
+      return (<Loading></Loading>)
     }
   }
 }
