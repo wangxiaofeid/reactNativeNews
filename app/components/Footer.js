@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import News from '../pages/News'
-import null1 from '../pages/null1'
+import Books from '../pages/Books'
 import null2 from '../pages/null2'
 import null3 from '../pages/null3'
 
@@ -47,8 +47,8 @@ export default class NewsList extends Component {
     const { navigator } = this.props;
     var component = News;
     switch(str){
-      case 'null1':
-        component = null1;
+      case 'Books':
+        component = Books;
         break;
       case 'null2':
         component = null2;
@@ -69,28 +69,28 @@ export default class NewsList extends Component {
       const { page } = this.props;
       return (
         <View style={styles.tabBar}>
-          <View style={[styles.item, page == 'null2'?styles.hover:""]}>
-            <TouchableOpacity onPress={()=> this.goPage('News')}>
-              <Image source={require('../img/more.png')}></Image>
-              <Text>新闻</Text>
+          <View style={[styles.item, page == 'News'?styles.hover:""]}>
+            <TouchableOpacity style={styles.center} onPress={()=> this.goPage('News')}>
+              <Image source={require('../img/more.png')} style={styles.img}></Image>
+              <Text style={styles.text}>news</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={[styles.item, page == 'Books'?styles.hover:""]}>
+            <TouchableOpacity style={styles.center} onPress={()=> this.goPage('Books')}>
+              <Image source={require('../img/more.png')} style={styles.img}></Image>
+              <Text style={styles.text}>Books</Text>
             </TouchableOpacity>
           </View>
           <View style={[styles.item, page == 'null2'?styles.hover:""]}>
-            <TouchableOpacity onPress={()=> this.goPage('null1')}>
-              <Image source={require('../img/more.png')}></Image>
-              <Text>null1</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={[styles.item, page == 'null2'?styles.hover:""]}>
-            <TouchableOpacity onPress={()=> this.goPage('null2')}>
-              <Image source={require('../img/install.png')}></Image>
-              <Text>null2</Text>
+            <TouchableOpacity style={styles.center} onPress={()=> this.goPage('null2')}>
+              <Image source={require('../img/install.png')} style={styles.img}></Image>
+              <Text style={styles.text}>null2</Text>
             </TouchableOpacity>
           </View>
           <View style={[styles.item, page == 'null3'?styles.hover:""]}>
-            <TouchableOpacity onPress={()=> this.goPage('null3')}>
-              <Image source={require('../img/install.png')}></Image>
-              <Text>null3</Text>
+            <TouchableOpacity style={styles.center} onPress={()=> this.goPage('null3')}>
+              <Image source={require('../img/install.png')} style={styles.img}></Image>
+              <Text style={styles.text}>null3</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -146,22 +146,29 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     height: 50,
-    backgroundColor: '#ff0000',
+    backgroundColor: 'darkslateblue',
     alignItems: 'center',
     flexDirection: 'row'
   },
   item: {
-    opacity: .6,
-    flex: 1
+    opacity: .4,
+    flex: 1,
   },
   hover: {
     opacity: 1,
   },
+  center: {
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
   img: {
     width: 20,
-    height: 20
+    height: 20,
   },
   text: {
-    color: '#000'
+    color: '#fff',
+    textAlign: 'center',
+    flex: 1
   },
 });

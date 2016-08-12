@@ -34,7 +34,7 @@ export default class root extends Component {
           Cmd+D or shake for dev menu
         </Text>
         <Text style={styles.instructions}>
-          我是新加的+
+          null3
         </Text>
         <TouchableOpacity onPress={this.back}>
           <Text>返回</Text>

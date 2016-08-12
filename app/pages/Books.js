@@ -9,10 +9,10 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux'
 
-import NewsList from '../components/NewsList'
-import { fetchNews } from '../actions/index'
+import BooksList from '../components/BooksList'
+import { fetchBooks } from '../actions/index'
 
-class News extends Component {
+class Books extends Component {
 
   constructor (props) {
     super(props);
@@ -30,12 +30,12 @@ class News extends Component {
 
   loadPage(isRefresh, isLoadMore){
     if(isRefresh){
-      this.props.dispatch(fetchNews(isRefresh, isLoadMore, 0));
+      this.props.dispatch(fetchBooks(isRefresh, isLoadMore, 0));
       this.setState({
         page: 1
       });
     }else{
-      this.props.dispatch(fetchNews(isRefresh, isLoadMore, this.state.page));
+      this.props.dispatch(fetchBooks(isRefresh, isLoadMore, this.state.page));
       this.setState({
         page: this.state + 1
       });
@@ -68,12 +68,12 @@ class News extends Component {
   }
 
   render() {
-    const { news } = this.props;
+    const { books } = this.props;
       return (
-            <NewsList 
+            <BooksList 
               navigator={this.props.navigator} 
-              newsList={news.newsList}
-              isRefresh={news.isRefresh}
+              booksList={books.booksList}
+              isRefresh={books.isRefresh}
               refresh={this.refresh}
               onEndReached={this.onEndReached}
               onScroll={this.onScroll}
@@ -104,10 +104,10 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps (state) {
-  const {news} = state;
+  const {books} = state;
   return {
-    news
+    books
   }
 }
 
-export default connect(mapStateToProps)(News);
+export default connect(mapStateToProps)(Books);

@@ -8,5 +8,10 @@ const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 
 export default function configureStore (initState) {
   const store = createStoreWithMiddleware(rootReducer, initState);
+
+  store.subscribe(() =>
+	  console.log(store.getState())
+	)
+
   return store;
 }

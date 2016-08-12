@@ -76,7 +76,7 @@ export default class NewsList extends Component {
         <View style={styles.list}>
           <TouchableOpacity onPress={this.onPressButton.bind(this,newObj.share_url)}>
             <View style={styles.imglist}>
-              <Image style={styles.img, styles.mr5} source={{uri: newObj.image_url}} />
+              <Image style={[styles.img, styles.mr5]} source={{uri: newObj.image_url}} />
               <Text style={styles.flex1}>{newObj.title}</Text>
             </View>
           </TouchableOpacity>
