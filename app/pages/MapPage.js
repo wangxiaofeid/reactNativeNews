@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   WebView
 } from 'react-native';
+import MapView from 'react-native-maps';
 
 export default class root extends Component {
   constructor (props) {
@@ -23,22 +24,24 @@ export default class root extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-        <Text style={styles.instructions}>
-          null2
-        </Text>
-        <TouchableOpacity onPress={this.back}>
-          <Text>返回</Text>
-        </TouchableOpacity>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 116.404,
+            longitude: 39.915,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 106.404,
+              longitude: 45.915,
+            }}
+            title='marker'
+            description='简介简介简介简介简介简介简介简介'
+          />
+        </MapView>
       </View>
     );
   }
@@ -60,5 +63,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 });

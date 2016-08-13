@@ -6,7 +6,6 @@ react-native项目
 ## 问题
 
 * [第三方组件库](https://js.coach/react-native#content)
-* [An App ID with Identifier '' is not available. Please ente](http://blog.csdn.net/soindy/article/details/47184933)
 * [react-native flex布局](http://www.tuicool.com/articles/a6Rjmi2)
 * [能用到的样式](http://www.cnblogs.com/suxun/p/5222175.html)
 * [真机测试](http://www.open-open.com/lib/view/open1456707122859.html)
@@ -38,3 +37,5 @@ redux --> Navigator(主层级) -->  weblcome
 			--> 新闻详情
 
 ``` 
+* [An App ID with Identifier '' is not available. Please ente](http://blog.csdn.net/soindy/article/details/47184933)
+* [react-native-maps ExceptionsManager.js:76 Warning: Native component for "AIRMapMarker" does not exist](https://github.com/lelandrichardson/react-native-maps/blob/master/docs/installation.md#android)[rnpm](http://reactnative.cn/docs/0.31/linking-libraries-ios.html#content)

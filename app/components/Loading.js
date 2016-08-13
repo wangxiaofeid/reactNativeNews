@@ -6,14 +6,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-import News from '../pages/News'
-import Books from '../pages/Books'
-import null2 from '../pages/null2'
-import null3 from '../pages/null3'
-
 export default class Loading extends Component {
-
-
 
   render() {
       return (

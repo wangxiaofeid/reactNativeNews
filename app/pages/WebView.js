@@ -33,7 +33,7 @@ export default class h5 extends Component {
             <Text style={styles.back}>返回</Text>
           </TouchableOpacity>
           <View style={styles.title}>
-            <Text style={{lineHeight: 30}}>{this.props.title}</Text>
+            <Text style={{lineHeight: 30}}>{this.props.route.title}</Text>
           </View>
         </View>
         <WebView

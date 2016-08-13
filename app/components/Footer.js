@@ -12,7 +12,7 @@ import {
 
 import News from '../pages/News'
 import Books from '../pages/Books'
-import null2 from '../pages/null2'
+import MapPage from '../pages/MapPage'
 import null3 from '../pages/null3'
 
 export default class NewsList extends Component {
@@ -44,14 +44,17 @@ export default class NewsList extends Component {
   }
 
   goPage(str){
-    const { navigator } = this.props;
+    const { navigator, page } = this.props;
+    if(page == str){
+      return
+    }
     var component = News;
     switch(str){
       case 'Books':
         component = Books;
         break;
-      case 'null2':
-        component = null2;
+      case 'MapPage':
+        component = MapPage;
         break;
       case 'null3':
         component = null3;
@@ -81,10 +84,10 @@ export default class NewsList extends Component {
               <Text style={styles.text}>Books</Text>
             </TouchableOpacity>
           </View>
-          <View style={[styles.item, page == 'null2'?styles.hover:""]}>
-            <TouchableOpacity style={styles.center} onPress={()=> this.goPage('null2')}>
+          <View style={[styles.item, page == 'MapPage'?styles.hover:""]}>
+            <TouchableOpacity style={styles.center} onPress={()=> this.goPage('MapPage')}>
               <Image source={require('../img/install.png')} style={styles.img}></Image>
-              <Text style={styles.text}>null2</Text>
+              <Text style={styles.text}>MapPage</Text>
             </TouchableOpacity>
           </View>
           <View style={[styles.item, page == 'null3'?styles.hover:""]}>
