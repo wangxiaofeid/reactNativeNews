@@ -9,7 +9,7 @@ import root from './app/root';
 
 AppRegistry.registerComponent('reactNativeNews', () => root);
 
-
+  
 // import React, { Component } from 'react';
 // import {
 //   AppRegistry,
